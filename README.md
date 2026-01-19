@@ -54,3 +54,79 @@ The script demonstrates:
 ---
 
 **Learning Objective**: Understand how JavaScript handles variables and their scope at a deeper level.
+
+<h1>Example or Excercise:</h1>
+<div>
+<h3>Example 1 :</h3>
+<p>console.log(nm);</p>
+<p>let nm = "name";</p>
+<p> Error: </p>
+<p>Why :let variables cannot be used before they are declared. </p>
+</div>
+
+
+<div>
+<h3>Example 2 :</h3>
+<p>console.log(b);</p>-
+<p>var b = "username";</p>
+<p>Answer :undefie </p>
+<p>Why : var variables are hoisted and initialized with undefined</p>
+</div>
+
+<div>
+<h3>Example 3 :</h3>
+<p>var x = 1;</p>
+<p>{
+    var x= 2;
+}
+</p>
+<p>console.log(x);</p>
+<p>Answer : 2 </p>
+<p>Why : 
+var is function-scoped, not block-scoped.
+The { } block does not create a new scope for var, so the second x overwrites the first one.</p>
+</div>
+
+<div>
+<h3>Example 4 :</h3>
+<p>let a = 10; </p>
+<p>{
+    let a = 20;
+    console.log("Inside:", a);
+}</p>
+<p>
+console.log("Outside:", a);
+</p>
+<p>Answer :Inside: 20
+           Outside: 10 </p>
+<p>Why : let is block-scoped.
+The a inside { } is a different variable from the a outside </p>
+</div>
+
+<div>
+
+<h3>Example 5 :</h3>
+
+<p>const person = {name: "demo"}; </p>
+
+on console.log
+
+<p>person.name= "user"; ✅</p>
+
+<p>person = {} ; ❌ </p>
+
+<p> Error:✅ person.name = "user" → Works
+
+❌ person = {} → TypeError: Assignment to constant variable </p>
+
+<p>Why : ✅ person.name = "user" → Works
+
+❌ person = {} → TypeError: Assignment to constant variable</p>
+
+</div>
+
+ 
+
+
+
+ 
