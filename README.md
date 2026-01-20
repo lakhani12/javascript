@@ -125,8 +125,26 @@ on console.log
 
 </div>
 
- 
+# Data Types in JavaScript
+
+JavaScript has two main categories of data types:
+
+1. **Primitive Data Types**: These are the basic types of data that hold their value directly. When you assign a primitive data type to a variable, it copies the actual value. Examples include:
+   - **Number**: Represents numeric values. For example, `let a = 12;`.
+   - **String**: Represents text values, which can be defined using single quotes (`'`), double quotes (`"`), or backticks (`` ` ``). For example, `let f = 'name';`.
+   - **Boolean**: Represents true or false values.
+   - **Null**: Represents an intentional absence of any value.
+   - **Undefined**: Represents a variable that has been declared but not assigned a value.
+   - **Symbol**: A unique and immutable data type.
+   - **BigInt**: Represents integers with arbitrary precision.
+
+2. **Non-Primitive Data Types**: These types are more complex and can hold collections of values or more complex entities. When you assign a non-primitive data type to a variable, it copies a reference to the object rather than the actual value. Examples include:
+   - **Object**: A collection of key-value pairs. For example, `let obj = { key: 'value' };`.
+   - **Array**: A special type of object used for storing ordered collections. For example, `let d = [1, 2, 3];`.
+
+Understanding these data types is crucial for effective programming in JavaScript, as they determine how data is stored and manipulated in your applications.
 
 
 
- 
+
+
