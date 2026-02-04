@@ -16,7 +16,7 @@ arr[0];
 
 // modify
 // array name [position] = new value 
-arr[0]= 10;a
+arr[0]= 10;
 
 // Array Methods:(variable_name.method_name())
 // push,pop,shift,unshift,slice,reverse,sort
