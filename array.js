@@ -18,6 +18,7 @@ arr[0];
 // array name [position] = new value 
 arr[0]= 10;
 
+
 // Array Methods:(variable_name.method_name())
 // push,pop,shift,unshift,slice,reverse,sort
 // push -->enter new value into array -- place it into last
@@ -34,3 +35,13 @@ arr.shift()
 // use case -- remove old product automatic aftersometimes
 
 // unshift
+
+// splice - remove value into array -- specific position and specific number of values
+// into () - first index (position), how many values you want to remove
+let e = [50,60,30,40,10];
+//e.splice(3,2);
+// e.splice(3,0,52,100)
+// use case -- select msg and remove multipal msg at on click
+
+// slice - copy values from array -- specific position and specific number of values
+// new  variable = array_name.slice (start )
