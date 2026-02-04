@@ -85,10 +85,6 @@ let tasks = ['Wake up', 'Brush teeth'];
 tasks.push('Buy milk');
 console.log(tasks)
 
-
-
-
-
 // Q2. pop()
 // Remove the last notification from the notifications array.
 let notifications = ['Email', 'Message', 'Reminder'];
