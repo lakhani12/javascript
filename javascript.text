@@ -1,0 +1,131 @@
+// 1. Double daily steps count
+const steps = [1000, 2000, 3000];
+
+function doubleSteps(step) {
+  return step * 2;
+}
+
+const newSteps = steps.map(doubleSteps);
+console.log("1 Output:", newSteps);
+// Output: [2000, 4000, 6000]
+// Why: map() applies doubleSteps() to every element, multiplying each step value by 2.
+
+
+
+// 2. Convert minutes to seconds
+const minutes = [1, 5, 10];
+
+const seconds = minutes.map(function(min) {
+  return min * 60;
+});
+console.log("2 Output:", seconds);
+// Output: [60, 300, 600]
+// Why: Each minute value is multiplied by 60 to convert into seconds.
+
+
+
+// 3. Add ₹50 delivery charge
+const prices1 = [200, 350, 500];
+
+const finalPrices = prices1.map(price => price + 50);
+console.log("3 Output:", finalPrices);
+// Output: [250, 400, 550]
+// Why: map() adds 50 to every price element.
+
+
+
+// 4. Convert exam marks to grades
+const marks = [35, 72, 88, 40];
+
+function getGrade(mark) {
+  return mark >= 40 ? 'Pass' : 'Fail';
+}
+
+const grades = marks.map(getGrade);
+console.log("4 Output:", grades);
+// Output: ['Fail', 'Pass', 'Pass', 'Pass']
+// Why: Each mark is checked; marks >= 40 become 'Pass', otherwise 'Fail'.
+
+
+
+// 5. Capitalize names
+const names = ['rahul', 'neha', 'amit'];
+
+const formattedNames = names.map(name =>
+  name[0].toUpperCase() + name.slice(1)
+);
+console.log("5 Output:", formattedNames);
+// Output: ['Rahul', 'Neha', 'Amit']
+// Why: First letter is converted to uppercase and concatenated with the rest of the string.
+
+
+
+// 6. Apply 10% discount
+const prices2 = [500, 1000, 1500];
+
+function applyDiscount(price) {
+  return price - price * 0.10;
+}
+
+const discounted = prices2.map(applyDiscount);
+console.log("6 Output:", discounted);
+// Output: [450, 900, 1350]
+// Why: 10% of each price is subtracted from the original value.
+
+
+
+// 7. Add bonus points
+const scores = [45, 60, 85];
+
+const finalScores = scores.map(score => {
+  if (score >= 80) return score + 20;
+  if (score >= 50) return score + 10;
+  return score;
+});
+console.log("7 Output:", finalScores);
+// Output: [45, 70, 105]
+// Why:
+// 45 → no bonus
+// 60 → +10 bonus
+// 85 → +20 bonus
+
+
+
+// 8. Convert Celsius to Fahrenheit
+const celsius = [0, 20, 30];
+
+function toFahrenheit(temp) {
+  return (temp * 9/5) + 32;
+}
+
+const fahrenheit = celsius.map(toFahrenheit);
+console.log("8 Output:", fahrenheit);
+// Output: [32, 68, 86]
+// Why: Standard conversion formula applied to each temperature.
+
+
+
+// 9. Generate table of numbers
+const numbers = [1, 2, 3, 4];
+
+const tableOfTwo = numbers.map(num => num * 2);
+console.log("9 Output:", tableOfTwo);
+// Output: [2, 4, 6, 8]
+// Why: Each number is multiplied by 2.
+
+
+
+// 10. SMS notification formatting
+const balances = [500, 1200, 300];
+
+const messages = balances.map(balance =>
+  `Your balance is ₹${balance}`
+);
+console.log("10 Output:", messages);
+// Output:
+// [
+//   "Your balance is ₹500",
+//   "Your balance is ₹1200",
+//   "Your balance is ₹300"
+// ]
+// Why: map() formats each balance value into a string template.
