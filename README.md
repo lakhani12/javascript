@@ -401,3 +401,157 @@ console.log("Matched");
 <p>Matched</p>
 <p>Why:Comparison happens before decrement</p>
 </div>
+
+---
+
+# DOM Questions and Tasks
+
+## 1. What is the DOM? How does it represent HTML?
+DOM (Document Object Model) is a programming interface for web pages.  
+It represents HTML as a tree of objects (nodes), so JavaScript can read and modify structure, content, and styles.
+
+## 2. Types of nodes in the DOM tree
+- Document node
+- Element node
+- Text node
+- Attribute node
+- Comment node
+
+## 3. Element node vs Text node
+- Element node: HTML tags like `<div>`, `<p>`, `<span>`.
+- Text node: actual text inside elements, like `"Hello"`.
+
+## 4. Identify nodes in `<div>Hello<span>World</span></div>`
+- Element node: `<div>`
+- Text node inside div: `"Hello"`
+- Element node inside div: `<span>`
+- Text node inside span: `"World"`
+
+## 5. `getElementById` vs `querySelector`
+- `getElementById("id")`: only by id, returns one element or `null`, very fast.
+- `querySelector("selector")`: uses CSS selector, returns first match or `null`.
+
+## 6. What does `getElementsByClassName` return? Is it an array?
+It returns an `HTMLCollection` (live collection), not a real array.
+
+## 7. Select all buttons with class `buy-now`
+```js
+const buttons = document.querySelectorAll("button.buy-now");
+```
+
+## 8. T1: Change heading text by ID
+```js
+const heading = document.getElementById("main-heading");
+heading.textContent = "Welcome to JS DOM";
+```
+
+## 9. T2: Select all `<li>` and print text
+```js
+const list = document.querySelectorAll("li");
+
+list.forEach((val) => {
+  console.log(val.textContent);
+});
+
+for (let i = 0; i < list.length; i++) {
+  console.log(list[i].textContent);
+}
+```
+
+## 10. `innerText` vs `textContent` vs `innerHTML`
+- `innerText`: visible text only (respects CSS/display).
+- `textContent`: all text content (faster, ignores styling visibility).
+- `innerHTML`: HTML markup + text inside element.
+
+## 11. When use `textContent` instead of `innerHTML`?
+Use `textContent` when setting plain text (safer, avoids HTML injection/XSS, better performance).
+
+## 12. T3: Replace paragraph content with bold text
+```js
+const p = document.querySelector("p");
+p.innerHTML = "<b>Updated</b> by JavaScript";
+```
+
+## 13. Get image `src` using JavaScript
+```js
+const img = document.querySelector("img");
+console.log(img.src);
+```
+
+## 14. What does `setAttribute()` do?
+It adds a new attribute or updates an existing attribute on an element.
+
+## 15. Add a `title` attribute dynamically
+```js
+const box = document.querySelector("div");
+box.setAttribute("title", "This is a dynamic title");
+```
+
+## 16. Remove `disabled` from a button
+```js
+const btn = document.querySelector("button");
+btn.removeAttribute("disabled");
+```
+
+## 17. What does `createElement()` do? What is returned?
+It creates a new DOM element node in memory.  
+It returns the created element object.
+
+## 18. `appendChild()` vs `prepend()`
+- `appendChild(node)`: adds node at end of parent (node only).
+- `prepend(...)`: adds at beginning (can take nodes or strings).
+
+## 19. Can you remove an element using `removeChild()`?
+Yes. You call it on the parent:
+```js
+parent.removeChild(child);
+```
+
+## 20. Create `<li>New Task</li>` and add to end of `<ul>`
+```js
+const ul = document.querySelector("ul");
+const li = document.createElement("li");
+li.textContent = "New Task";
+ul.appendChild(li);
+```
+
+## 21. Create image and add at top of a div
+```js
+const div = document.querySelector("div");
+const img = document.createElement("img");
+img.src = "https://via.placeholder.com/150";
+img.alt = "Placeholder";
+div.prepend(img);
+```
+
+## 22. Delete first item in a list
+```js
+const firstItem = document.querySelector("ul li:first-child");
+if (firstItem) firstItem.remove();
+```
+
+## 23. Change background color of an element
+```js
+const el = document.querySelector(".box");
+el.style.backgroundColor = "lightblue";
+```
+
+## 24. `.classList.add()` vs `.classList.toggle()`
+- `add("x")`: always adds class `x`.
+- `toggle("x")`: adds `x` if missing, removes `x` if present.
+
+## 25. Add `highlight` class to every even item
+```js
+const li = document.querySelectorAll("ul li:nth-child(2n)");
+li.forEach((elem) => {
+  elem.classList.add("highlight");
+});
+```
+
+## 26. Set font size of all `<p>` to `18px`
+```js
+const paragraphs = document.querySelectorAll("p");
+paragraphs.forEach((p) => {
+  p.style.fontSize = "18px";
+});
+```
