@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Creation</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main flex justify-center items-center mt-10 ">
+            <form class="bg-amber-200 p-4 rounded-xl p-4">
+        <label for="dp">Profile Image</label>
+        <input class="block outline-none border border-amber-600 border-2 rounded-xl px-2 py-1" type="text" name="dp" id="dp" placeholder="Your profile picture">
+        <label for="Name">Name</label>
+      <input class="block outline-none border border-amber-600 border-2 rounded-xl px-2 py-1" type="text" name="name" id="name" placeholder="Username" class="border border-2 rounded"/>
+      <label for="post">Post</label>
+      <input class="block outline-none border border-amber-600 border-2 rounded-xl px-2 py-1" type="text" name="post" id="post" placeholder="Image Link" />
+      <label for="caption">Caption </label>
+      <textarea 
+      class="block outline-none border border-amber-600 border-2 rounded-xl px-2 py-1"
+        name="caption"
+        id="caption"
+        cols="30"
+        rows="5"
+        placeholder="Write a Caption....."
+      ></textarea>
+                <button type="submit" class="submit w-full h-auto px-3 py-3 mt-2 rounded-xl font-bold bg-amber-700 text-white  ">Create Post</button>
+
+    </form>
+    </div>
+
+
+    <div id="fncs">
+      <div id="add"></div>
+      <div id="remove"></div>
+      <div id="update"></div>
+    </div>
+
+
+    <div class="posts grid grid-cols-1">
+        <div class="post w-1/4 h-auto rounded-lg shadow-xl rounded-xl border-amber-100 overflow-hidden">
+            <div class="bar flex justify-between gap-2 items-center bg-slate-200">
+                <img src="https://i.pinimg.com/736x/c2/d0/44/c2d044ec175408b8a2ca38bdbee3d428.jpg" class="w-30 h-30 rounded-full" alt="">
+                 <div>
+                <h3 class="text-xl font-semibold text-black/50">username</h3>
+                <p class="text-md font-semibold text-black/20">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            </div>
+            </div>
+           
+            <div class="mainImg overflow-hidden w-full h-auto rounded-bl-lg rounded-br-lg ">
+                <img src="https://i.pinimg.com/474x/01/47/e3/0147e360d1da619e9240ee451392888b.jpg" alt="Mail post" class="w-full h-full object-fit hover:scale-[1.5]">                
+            </div>
+        </div>
+    </div>
+    <script src="./post.js"></script>
+  </body>
+</html>
