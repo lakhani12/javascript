@@ -1,0 +1,74 @@
+function Userdata() {
+    fetch("https://jsonplaceholder.typicode.com/comments?limit=50")
+    .then(function(rawData){
+        console.log(rawData);
+
+        return rawData.json();
+    })
+    .then((data)=> {
+         console.log("Final Data Step 1", data);
+      console.log("Final Data Step 2", data.user);
+        data.forEach((user) => {
+            RenderUI(user);
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
+ Userdata();
+ function RenderUI(user){
+    
+    let card= document.querySelector(".card");
+
+ card.innerHTML += `  <div class="animate-slide-in relative w-full max-w-sm bg-[#e0e5ec] p-1 rounded-[2.5rem] shadow-[20px_20px_60px_#bec3c9,-20px_-20px_60px_#ffffff]">
+        
+        <div class="bg-[#e0e5ec] rounded-[2.3rem] p-6 border border-white/20">
+            
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <div class="w-12 h-12 rounded-2xl bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#bec3c9,inset_-4px_-4px_8px_#ffffff] flex items-center justify-center">
+                            <span class="text-blue-500 font-black text-xl">E</span>
+                        </div>
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500 border-2 border-[#e0e5ec]"></span>
+                        </span>
+                    </div>
+                    <div>
+                        <h4 class="text-gray-700 font-bold text-xs uppercase tracking-widest">New Comment</h4>
+                        <p class="text-gray-400 text-[10px] font-medium">Post ID: 001</p>
+                    </div>
+                </div>
+                
+                <button class="w-8 h-8 rounded-full bg-[#e0e5ec] shadow-[4px_4px_8px_#bec3c9,-4px_-4px_8px_#ffffff] flex items-center justify-center text-gray-400 hover:text-red-400 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <div class="bg-[#e0e5ec] rounded-2xl p-4 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] mb-6">
+                <h3 class="text-gray-800 font-bold text-sm mb-2 leading-tight">
+                    "id labore ex et quam laborum"
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed italic">
+                    laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus...
+                </p>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] text-blue-600 font-bold">Eliseo@gardner.biz</span>
+                
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 rounded-xl bg-[#e0e5ec] shadow-[4px_4px_8px_#bec3c9,-4px_-4px_8px_#ffffff] text-xs font-bold text-gray-600 active:shadow-[inset_2px_2px_5px_#bec3c9,inset_-2px_-2px_5px_#ffffff] transition-all">
+                        Ignore
+                    </button>
+                    <button class="px-4 py-2 rounded-xl bg-blue-500 text-white text-xs font-bold shadow-[4px_4px_10px_rgba(59,130,246,0.4)] hover:bg-blue-600 active:scale-95 transition-all">
+                        Approve
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>`;
+ }
